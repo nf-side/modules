@@ -1,0 +1,434 @@
+biohansel:
+  - modules/nf-side/biohansel/**
+  - tests/modules/nf-side/biohansel/**
+cadd:
+  - modules/nf-side/cadd/**
+  - tests/modules/nf-side/cadd/**
+canu:
+  - modules/nf-side/canu/**
+  - tests/modules/nf-side/canu/**
+cellrangerarc/count:
+  - modules/nf-side/cellrangerarc/count/**
+  - tests/modules/nf-side/cellrangerarc/count/**
+  - modules/nf-side/cellrangerarc/mkref/**
+  - tests/modules/nf-side/cellrangerarc/mkref/**
+cellrangerarc/mkfastq:
+  - modules/nf-side/cellrangerarc/mkfastq/**
+  - tests/modules/nf-side/cellrangerarc/mkfastq/**
+cellrangerarc/mkref:
+  - modules/nf-side/cellrangerarc/mkref/**
+  - tests/modules/nf-side/cellrangerarc/mkref/**
+  - modules/nf-side/cellrangerarc/mkgtf/**
+  - tests/modules/nf-side/cellrangerarc/mkgtf/**
+cellrangeratac/count:
+  - modules/nf-side/cellrangeratac/count/**
+  - tests/modules/nf-side/cellrangeratac/count/**
+  - modules/nf-side/cellrangeratac/mkref/**
+  - tests/modules/nf-side/cellrangeratac/mkref/**
+cellrangeratac/mkfastq:
+  - modules/nf-side/cellrangeratac/mkfastq/**
+  - tests/modules/nf-side/cellrangeratac/mkfastq/**
+cellrangeratac/mkref:
+  - modules/nf-side/cellrangeratac/mkref/**
+  - tests/modules/nf-side/cellrangeratac/mkref/**
+cnvnator/cnvnator:
+  - modules/nf-side/cnvnator/cnvnator/**
+  - tests/modules/nf-side/cnvnator/cnvnator/**
+cnvnator/convert2vcf:
+  - modules/nf-side/cnvnator/convert2vcf/**
+  - tests/modules/nf-side/cnvnator/convert2vcf/**
+conifer:
+  - modules/nf-side/conifer/**
+  - tests/modules/nf-side/conifer/**
+cooler/balance:
+  - modules/nf-side/cooler/balance/**
+  - tests/modules/nf-side/cooler/balance/**
+cooler/cload:
+  - modules/nf-side/cooler/cload/**
+  - tests/modules/nf-side/cooler/cload/**
+cooler/merge:
+  - modules/nf-side/cooler/merge/**
+  - tests/modules/nf-side/cooler/merge/**
+cooler/zoomify:
+  - modules/nf-side/cooler/zoomify/**
+  - tests/modules/nf-side/cooler/zoomify/**
+cutesv:
+  - modules/nf-side/cutesv/**
+  - tests/modules/nf-side/cutesv/**
+damageprofiler:
+  - modules/nf-side/damageprofiler/**
+  - tests/modules/nf-side/damageprofiler/**
+dedup:
+  - modules/nf-side/dedup/**
+  - tests/modules/nf-side/dedup/**
+deeptmhmm:
+  - modules/nf-side/deeptmhmm/**
+  - tests/modules/nf-side/deeptmhmm/**
+duphold:
+  - modules/nf-side/duphold/**
+  - tests/modules/nf-side/duphold/**
+eigenstratdatabasetools/eigenstratsnpcoverage:
+  - modules/nf-side/eigenstratdatabasetools/eigenstratsnpcoverage/**
+  - tests/modules/nf-side/eigenstratdatabasetools/eigenstratsnpcoverage/**
+elprep/merge:
+  - modules/nf-side/elprep/merge/**
+  - tests/modules/nf-side/elprep/merge/**
+emboss/seqret:
+  - modules/nf-side/emboss/seqret/**
+  - tests/modules/nf-side/emboss/seqret/**
+endorspy:
+  - modules/nf-side/endorspy/**
+  - tests/modules/nf-side/endorspy/**
+entrezdirect/esearch:
+  - modules/nf-side/entrezdirect/esearch/**
+  - tests/modules/nf-side/entrezdirect/esearch/**
+entrezdirect/xtract:
+  - modules/nf-side/entrezdirect/xtract/**
+  - tests/modules/nf-side/entrezdirect/xtract/**
+expansionhunterdenovo/merge:
+  - modules/nf-side/expansionhunterdenovo/merge/**
+  - tests/modules/nf-side/expansionhunterdenovo/merge/**
+fcs/fcsgx:
+  - modules/nf-side/fcs/fcsgx/**
+  - tests/modules/nf-side/fcs/fcsgx/**
+fqtk:
+  - modules/nf-side/fqtk/**
+  - modules/nf-side/untar/**
+  - tests/modules/nf-side/fqtk/**
+gangstr:
+  - modules/nf-side/gangstr/**
+  - tests/modules/nf-side/gangstr/**
+gatk/indelrealigner:
+  - modules/nf-side/gatk/indelrealigner/**
+  - tests/modules/nf-side/gatk/indelrealigner/**
+gem2/gem2bedmappability:
+  - modules/nf-side/gem2/gem2bedmappability/**
+  - tests/modules/nf-side/gem2/gem2bedmappability/**
+gem2/gemindexer:
+  - modules/nf-side/gem2/gemindexer/**
+  - tests/modules/nf-side/gem2/gemindexer/**
+gem2/gemmappability:
+  - modules/nf-side/gem2/gemmappability/**
+  - tests/modules/nf-side/gem2/gemmappability/**
+genescopefk:
+  - modules/nf-side/genescopefk/**
+  - tests/modules/nf-side/genescopefk/**
+genmap/map:
+  - modules/nf-side/genmap/map/**
+  - tests/modules/nf-side/genmap/map/**
+genotyphi/parse:
+  - modules/nf-side/genotyphi/parse/**
+  - tests/modules/nf-side/genotyphi/parse/**
+genrich:
+  - modules/nf-side/genrich/**
+  - tests/modules/nf-side/genrich/**
+gget/gget:
+  - modules/nf-side/gget/gget/**
+  - tests/modules/nf-side/gget/gget/**
+graphmap2/align:
+  - modules/nf-side/graphmap2/align/**
+  - tests/modules/nf-side/graphmap2/align/**
+hlala/preparegraph:
+  - modules/nf-side/hlala/preparegraph/**
+  - tests/modules/nf-side/hlala/preparegraph/**
+hlala/typing:
+  - modules/nf-side/hlala/typing/**
+  - tests/modules/nf-side/hlala/typing/**
+hmmer/eslalimask:
+  - modules/nf-side/hmmer/eslalimask/**
+  - tests/modules/nf-side/hmmer/eslalimask/**
+hmmer/eslreformat:
+  - modules/nf-side/hmmer/eslreformat/**
+  - tests/modules/nf-side/hmmer/eslreformat/**
+hmtnote/annotate:
+  - modules/nf-side/hmtnote/annotate/**
+  - tests/modules/nf-side/hmtnote/annotate/**
+icountmini/metagene:
+  - modules/nf-side/icountmini/metagene/**
+  - tests/modules/nf-side/icountmini/metagene/**
+icountmini/peaks:
+  - modules/nf-side/icountmini/peaks/**
+  - tests/modules/nf-side/icountmini/peaks/**
+icountmini/sigxls:
+  - modules/nf-side/icountmini/sigxls/**
+  - tests/modules/nf-side/icountmini/sigxls/**
+icountmini/summary:
+  - modules/nf-side/icountmini/summary/**
+  - tests/modules/nf-side/icountmini/summary/**
+ilastik/pixelclassification:
+  - modules/nf-side/ilastik/pixelclassification/**
+  - tests/modules/nf-side/ilastik/pixelclassification/**
+iphop/download:
+  - modules/nf-side/iphop/download/**
+  - tests/modules/nf-side/iphop/download/**
+iphop/predict:
+  - modules/nf-side/iphop/predict/**
+  - tests/modules/nf-side/iphop/predict/**
+jupyternotebook:
+  - modules/nf-side/jupyternotebook/**
+  - tests/modules/nf-side/jupyternotebook/**
+kat/hist:
+  - modules/nf-side/kat/hist/**
+  - tests/modules/nf-side/kat/hist/**
+khmer/normalizebymedian:
+  - modules/nf-side/khmer/normalizebymedian/**
+  - tests/modules/nf-side/khmer/normalizebymedian/**
+khmer/uniquekmers:
+  - modules/nf-side/khmer/uniquekmers/**
+  - tests/modules/nf-side/khmer/uniquekmers/**
+kmcp/merge:
+  - modules/nf-side/kmcp/merge/**
+  - tests/modules/nf-side/kmcp/merge/**
+kofamscan:
+  - modules/nf-side/kofamscan/**
+  - tests/modules/nf-side/kofamscan/**
+leehom:
+  - modules/nf-side/leehom/**
+  - tests/modules/nf-side/leehom/**
+maxquant/lfq:
+  - modules/nf-side/maxquant/lfq/**
+  - tests/modules/nf-side/maxquant/lfq/**
+megan/daa2info:
+  - modules/nf-side/megan/daa2info/**
+  - tests/modules/nf-side/megan/daa2info/**
+metaeuk/easypredict:
+  - modules/nf-side/metaeuk/easypredict/**
+  - tests/modules/nf-side/metaeuk/easypredict/**
+metaphlan3/mergemetaphlantables:
+  - modules/nf-side/metaphlan3/mergemetaphlantables/**
+  - tests/modules/nf-side/metaphlan3/mergemetaphlantables/**
+metaphlan3/metaphlan3:
+  - modules/nf-side/metaphlan3/metaphlan3/**
+  - tests/modules/nf-side/metaphlan3/metaphlan3/**
+midas/run:
+  - modules/nf-side/midas/run/**
+  - tests/modules/nf-side/midas/run/**
+msisensor/msi:
+  - modules/nf-side/msisensor/msi/**
+  - tests/modules/nf-side/msisensor/msi/**
+msisensor/scan:
+  - modules/nf-side/msisensor/scan/**
+  - tests/modules/nf-side/msisensor/scan/**
+msisensor2/msi:
+  - modules/nf-side/msisensor2/msi/**
+  - tests/modules/nf-side/msisensor2/msi/**
+msisensorpro/msisomatic:
+  - modules/nf-side/msisensorpro/msisomatic/**
+  - tests/modules/nf-side/msisensorpro/msisomatic/**
+muscle:
+  - modules/nf-side/muscle/**
+  - tests/modules/nf-side/muscle/**
+nanomonsv/parse:
+  - modules/nf-side/nanomonsv/parse/**
+  - tests/modules/nf-side/nanomonsv/parse/**
+ncbitools/vecscreen:
+  - modules/nf-side/ncbitools/vecscreen/**
+  - tests/modules/nf-side/ncbitools/vecscreen/**
+oncocnv:
+  - modules/nf-side/oncocnv/**
+  - tests/modules/nf-side/oncocnv/**
+paraclu:
+  - modules/nf-side/paraclu/**
+  - tests/modules/nf-side/paraclu/**
+paragraph/idxdepth:
+  - modules/nf-side/paragraph/idxdepth/**
+  - tests/modules/nf-side/paragraph/idxdepth/**
+paragraph/multigrmpy:
+  - modules/nf-side/paragraph/multigrmpy/**
+  - tests/modules/nf-side/paragraph/multigrmpy/**
+phyloflash:
+  - modules/nf-side/phyloflash/**
+  - tests/modules/nf-side/phyloflash/**
+plink/extract:
+  - modules/nf-side/plink/extract/**
+  - tests/modules/nf-side/plink/extract/**
+plink/indep:
+  - modules/nf-side/plink/indep/**
+  - tests/modules/nf-side/plink/indep/**
+plink/indeppairwise:
+  - modules/nf-side/plink/indeppairwise/**
+  - tests/modules/nf-side/plink/indeppairwise/**
+plink/recode:
+  - modules/nf-side/plink/recode/**
+  - tests/modules/nf-side/plink/recode/**
+pneumocat:
+  - modules/nf-side/pneumocat/**
+  - tests/modules/nf-side/pneumocat/**
+pretextsnapshot:
+  - modules/nf-side/pretextsnapshot/**
+  - tests/modules/nf-side/pretextsnapshot/**
+propr/logratio:
+  - modules/nf-side/propr/logratio/**
+  - tests/modules/nf-side/propr/logratio/**
+purecn/run:
+  - modules/nf-side/purecn/run/**
+  - tests/modules/nf-side/purecn/run/**
+purgedups/calcuts:
+  - modules/nf-side/purgedups/calcuts/**
+  - tests/modules/nf-side/purgedups/calcuts/**
+purgedups/getseqs:
+  - modules/nf-side/purgedups/getseqs/**
+  - tests/modules/nf-side/purgedups/getseqs/**
+purgedups/histplot:
+  - modules/nf-side/purgedups/histplot/**
+  - tests/modules/nf-side/purgedups/histplot/**
+purgedups/purgedups:
+  - modules/nf-side/purgedups/purgedups/**
+  - tests/modules/nf-side/purgedups/purgedups/**
+pydamage/filter:
+  - modules/nf-side/pydamage/filter/**
+  - tests/modules/nf-side/pydamage/filter/**
+raxmlng:
+  - modules/nf-side/raxmlng/**
+  - tests/modules/nf-side/raxmlng/**
+rhocall/annotate:
+  - modules/nf-side/rhocall/annotate/**
+  - tests/modules/nf-side/rhocall/annotate/**
+roary:
+  - modules/nf-side/roary/**
+  - tests/modules/nf-side/roary/**
+scramble/clusteranalysis:
+  - modules/nf-side/scramble/clusteranalysis/**
+  - tests/modules/nf-side/scramble/clusteranalysis/**
+semibin/singleeasybin:
+  - modules/nf-side/semibin/singleeasybin/**
+  - tests/modules/nf-side/semibin/singleeasybin/**
+sequencetools/pileupcaller:
+  - modules/nf-side/sequencetools/pileupcaller/**
+  - tests/modules/nf-side/sequencetools/pileupcaller/**
+seqwish/induce:
+  - modules/nf-side/seqwish/induce/**
+  - tests/modules/nf-side/seqwish/induce/**
+sgdemux:
+  - modules/nf-side/sgdemux/**
+  - modules/nf-side/untar/**
+  - tests/modules/nf-side/sgdemux/**
+shigeifinder:
+  - modules/nf-side/shigeifinder/**
+  - tests/modules/nf-side/shigeifinder/**
+snapaligner/align:
+  - modules/nf-side/snapaligner/align/**
+  - tests/modules/nf-side/snapaligner/align/**
+snippy/core:
+  - modules/nf-side/snippy/core/**
+  - tests/modules/nf-side/snippy/core/**
+somalier/ancestry:
+  - modules/nf-side/somalier/ancestry/**
+  - tests/modules/nf-side/somalier/ancestry/**
+spatyper:
+  - modules/nf-side/spatyper/**
+  - tests/modules/nf-side/spatyper/**
+srst2/srst2:
+  - modules/nf-side/srst2/srst2/**
+  - tests/modules/nf-side/srst2/srst2/**
+stecfinder:
+  - modules/nf-side/stecfinder/**
+  - tests/modules/nf-side/stecfinder/**
+subworkflows/bam_cnv_wisecondorx:
+  - subworkflows/nf-side/bam_cnv_wisecondorx/**
+  - tests/subworkflows/nf-side/bam_cnv_wisecondorx/**
+subworkflows/bam_docounts_contamination_angsd:
+  - subworkflows/nf-side/bam_docounts_contamination_angsd/**
+  - tests/subworkflows/nf-side/bam_docounts_contamination_angsd/**
+subworkflows/bam_markduplicates_samtools:
+  - subworkflows/nf-side/bam_markduplicates_samtools/**
+  - tests/subworkflows/nf-side/bam_markduplicates_samtools/**
+subworkflows/bam_tumor_normal_somatic_variant_calling_gatk:
+  - subworkflows/nf-side/bam_tumor_normal_somatic_variant_calling_gatk/**
+  - tests/subworkflows/nf-side/bam_tumor_normal_somatic_variant_calling_gatk/**
+subworkflows/bam_tumor_only_somatic_variant_calling_gatk:
+  - subworkflows/nf-side/bam_tumor_only_somatic_variant_calling_gatk/**
+  - tests/subworkflows/nf-side/bam_tumor_only_somatic_variant_calling_gatk/**
+subworkflows/bam_variant_calling_sort_freebayes_bcftools:
+  - subworkflows/nf-side/bam_variant_calling_sort_freebayes_bcftools/**
+  - tests/subworkflows/nf-side/bam_variant_calling_sort_freebayes_bcftools/**
+subworkflows/bed_scatter_bedtools:
+  - subworkflows/nf-side/bed_scatter_bedtools/**
+  - tests/subworkflows/nf-side/bed_scatter_bedtools/**
+subworkflows/fasta_clean_fcs:
+  - subworkflows/nf-side/fasta_clean_fcs/**
+  - tests/subworkflows/nf-side/fasta_clean_fcs/**
+subworkflows/fasta_index_dna:
+  - subworkflows/nf-side/fasta_index_dna/**
+  - tests/subworkflows/nf-side/fasta_index_dna/**
+subworkflows/fastq_align_bwaaln:
+  - subworkflows/nf-side/fastq_align_bwaaln/**
+  - tests/subworkflows/nf-side/fastq_align_bwaaln/**
+subworkflows/fastq_align_chromap:
+  - subworkflows/nf-side/fastq_align_chromap/**
+  - tests/subworkflows/nf-side/fastq_align_chromap/**
+subworkflows/fastq_contam_seqtk_kraken:
+  - subworkflows/nf-side/fastq_contam_seqtk_kraken/**
+  - tests/subworkflows/nf-side/fastq_contam_seqtk_kraken/**
+subworkflows/fastq_trim_fastp_fastqc:
+  - subworkflows/nf-side/fastq_trim_fastp_fastqc/**
+  - tests/subworkflows/nf-side/fastq_trim_fastp_fastqc/**
+subworkflows/multiple_impute_glimpse2:
+  - subworkflows/nf-side/multiple_impute_glimpse2/**
+  - tests/subworkflows/nf-side/multiple_impute_glimpse2/**
+subworkflows/vcf_annotate_ensemblvep:
+  - subworkflows/nf-side/vcf_annotate_ensemblvep/**
+  - tests/subworkflows/nf-side/vcf_annotate_ensemblvep/**
+subworkflows/vcf_annotate_snpeff:
+  - subworkflows/nf-side/vcf_annotate_snpeff/**
+  - tests/subworkflows/nf-side/vcf_annotate_snpeff/**
+subworkflows/vcf_extract_relate_somalier:
+  - subworkflows/nf-side/vcf_extract_relate_somalier/**
+  - tests/subworkflows/nf-side/vcf_extract_relate_somalier/**
+subworkflows/vcf_gather_bcftools:
+  - subworkflows/nf-side/vcf_gather_bcftools/**
+  - tests/subworkflows/nf-side/vcf_gather_bcftools/**
+subworkflows/vcf_phase_shapeit5:
+  - subworkflows/nf-side/vcf_phase_shapeit5/**
+  - tests/subworkflows/nf-side/vcf_phase_shapeit5/**
+survivor/filter:
+  - modules/nf-side/survivor/filter/**
+  - tests/modules/nf-side/survivor/filter/**
+survivor/simsv:
+  - modules/nf-side/survivor/simsv/**
+  - tests/modules/nf-side/survivor/simsv/**
+svaba:
+  - modules/nf-side/svaba/**
+  - tests/modules/nf-side/svaba/**
+svtk/baftest:
+  - modules/nf-side/svtk/baftest/**
+  - tests/modules/nf-side/svtk/baftest/**
+svtk/rdtest2vcf:
+  - modules/nf-side/svtk/rdtest2vcf/**
+  - tests/modules/nf-side/svtk/rdtest2vcf/**
+svtk/standardize:
+  - modules/nf-side/svtk/standardize/**
+  - tests/modules/nf-side/svtk/standardize/**
+topas/gencons:
+  - modules/nf-side/topas/gencons/**
+  - tests/modules/nf-side/topas/gencons/**
+truvari/bench:
+  - modules/nf-side/truvari/bench/**
+  - tests/modules/nf-side/truvari/bench/**
+ucsc/bedtobigbed:
+  - modules/nf-side/ucsc/bedtobigbed/**
+  - tests/modules/nf-side/ucsc/bedtobigbed/**
+ultra/align:
+  - modules/nf-side/ultra/align/**
+  - tests/modules/nf-side/ultra/align/**
+ultra/index:
+  - modules/nf-side/ultra/index/**
+  - tests/modules/nf-side/ultra/index/**
+ultra/pipeline:
+  - modules/nf-side/ultra/pipeline/**
+  - tests/modules/nf-side/ultra/pipeline/**
+universc:
+  - modules/nf-side/universc/**
+  - tests/modules/nf-side/universc/**
+varlociraptor/callvariants:
+  - modules/nf-side/varlociraptor/callvariants/**
+  - tests/modules/nf-side/varlociraptor/callvariants/**
+varlociraptor/preprocess:
+  - modules/nf-side/varlociraptor/preprocess/**
+  - tests/modules/nf-side/varlociraptor/preprocess/**
+vrhyme/extractunbinned:
+  - modules/nf-side/vrhyme/extractunbinned/**
+  - tests/modules/nf-side/vrhyme/extractunbinned/**
+vrhyme/linkbins:
+  - modules/nf-side/vrhyme/linkbins/**
+  - tests/modules/nf-side/vrhyme/linkbins/**
