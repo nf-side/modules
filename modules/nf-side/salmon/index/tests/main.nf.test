@@ -86,7 +86,5 @@ nextflow_process {
                 ).match()}
             )
         }
-
     }
-
 }
