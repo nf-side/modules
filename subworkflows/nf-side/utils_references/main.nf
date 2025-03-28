@@ -12,18 +12,28 @@ workflow UTILS_REFERENCES {
     param_value
     attribute_file
     attribute_value
-    basepath
+    basepath_final
 
     main:
     // Change all igenomes base parameter values in the file to the correct value
-    def correct_yaml_file = file(yaml_reference, checkIfExists:true)
-    if (basepath) {
-        def yaml_file = file(yaml_reference, checkIfExists:true)
-        def staged_yaml_file = "${workflow.workDir}/tmp/${java.util.UUID.randomUUID().toString()}.${yaml_file.extension}"
-        yaml_file.copyTo(staged_yaml_file)
-        correct_yaml_file = file(staged_yaml_file, checkIfExists:true)
-        def yaml_content = correct_yaml_file.text
-        correct_yaml_file.text = yaml_content.replace('${params.igenomes_base}', params.igenomes_base).replace('$params.igenomes_base', params.igenomes_base)
+    def basepath_to_replace = [
+        '${params.igenomes_base}',
+        's3://ngi-igenomes/igenomes/',
+    ]
+
+    def correct_yaml_file = file(yaml_reference, checkIfExists: true)
+
+    if (basepath_final) {
+        def staged_yaml_file = "${workflow.workDir}/tmp/${java.util.UUID.randomUUID().toString()}.${correct_yaml_file.extension}"
+        correct_yaml_file.copyTo(staged_yaml_file)
+        correct_yaml_file = file(staged_yaml_file, checkIfExists: true)
+
+        // Use a local variable to accumulate changes
+        def updated_yaml_content = correct_yaml_file.text
+        basepath_to_replace.each { basepath_replacement ->
+            updated_yaml_content = updated_yaml_content.replace(basepath_replacement, basepath_final)
+        }
+        correct_yaml_file.text = updated_yaml_content
     }
 
     references = Channel.fromList(samplesheetToList(correct_yaml_file, "${projectDir}/subworkflows/nf-side/utils_references/schema_references.json"))
