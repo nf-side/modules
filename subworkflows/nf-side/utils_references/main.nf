@@ -17,7 +17,7 @@ workflow UTILS_REFERENCES {
     main:
     // Change all igenomes base parameter values in the file to the correct value
     def correct_yaml_file = file(yaml_reference, checkIfExists:true)
-    if(params.igenomes_base) {
+    if (basepath) {
         def yaml_file = file(yaml_reference, checkIfExists:true)
         def staged_yaml_file = "${workflow.workDir}/tmp/${java.util.UUID.randomUUID().toString()}.${yaml_file.extension}"
         yaml_file.copyTo(staged_yaml_file)
@@ -29,7 +29,7 @@ workflow UTILS_REFERENCES {
     references = Channel.fromList(samplesheetToList(correct_yaml_file, "${projectDir}/subworkflows/nf-side/utils_references/schema_references.json"))
 
     // GIVING up writing a test for the functions, so writing a subworkflow to test it
-    references_file = get_references_file(references, param_file, attribute_file, basepath)
+    references_file = get_references_file(references, param_file, attribute_file)
     references_value = get_references_value(references, param_value, attribute_value)
 
     emit:
@@ -44,11 +44,11 @@ workflow UTILS_REFERENCES {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-def get_references_file(references, param, attribute, basepath) {
+def get_references_file(references, param, attribute) {
     return references
         .map { meta, _readme ->
             if (param || meta[attribute]) {
-                [meta.subMap(['id']), file(param ?: meta[attribute].replace('${params.igenomes_base}', basepath), checkIfExists: true)]
+                [meta.subMap(['id']), file(param ?: meta[attribute], checkIfExists: true)]
             }
             else {
                 null
