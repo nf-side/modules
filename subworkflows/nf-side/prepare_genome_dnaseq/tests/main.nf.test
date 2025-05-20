@@ -20,6 +20,7 @@ nextflow_workflow {
                 run_intervals = true
                 run_msisensorpro = true
                 run_tabix = true
+                run_snapaligner = true
 
                 input[0] = Channel.of([
                     [id:'test'],
@@ -33,14 +34,16 @@ nextflow_workflow {
                     [id:'test'],
                     file(params.modules_testdata_base_path + 'genomics/homo_sapiens/genome/vcf/genmod_compound.vcf', checkIfExists: true)
                 ])
-                input[3] = run_bwamem1
-                input[4] = run_bwamem2
-                input[5] = run_createsequencedictionary
-                input[6] = run_dragmap
-                input[7] = run_faidx
-                input[8] = run_intervals
-                input[9] = run_msisensorpro
-                input[10] = run_tabix
+                input[3] = []
+                input[4] = run_bwamem1
+                input[5] = run_bwamem2
+                input[6] = run_createsequencedictionary
+                input[7] = run_dragmap
+                input[8] = run_faidx
+                input[9] = run_intervals
+                input[10] = run_msisensorpro
+                input[11] = run_tabix
+                input[12] = run_snapaligner
                 """
             }
         }
@@ -60,6 +63,7 @@ nextflow_workflow {
                     workflow.out.msisensorpro_list,
                     workflow.out.vcf_gz.collect { [it[0], "${file(it[1]).name},variantsMD5:${path(it[1]).vcf.variantsMD5}"] },
                     workflow.out.vcf_tbi.collect { [it[0], file(it[1]).name] },
+                    workflow.out.snapaligner_index,
                     workflow.out.versions
                 ).match()
                 }
