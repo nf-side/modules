@@ -23,7 +23,7 @@ nextflow_process {
         }
 
         then {
-            assert { process.success }
+            assert process.success
             assertAll(
                 { assert snapshot(
                         file(process.out.hashmap[0][1]).name,
@@ -51,7 +51,7 @@ nextflow_process {
         }
 
         then {
-            assert { process.success }
+            assert process.success
             assertAll(
                 { assert snapshot(
                     process.out,

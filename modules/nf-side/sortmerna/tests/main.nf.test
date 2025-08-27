@@ -24,9 +24,9 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
-                { assert ! process.out.reads },
+                { assert !process.out.reads },
                 { assert snapshot(
                     file(process.out.index[0][1]).listFiles().findAll { !it.name.endsWith(".stats") }.sort { it.name },
                     process.out.versions
@@ -54,9 +54,9 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
-                { assert ! process.out.reads },
+                { assert !process.out.reads },
                 { assert snapshot(process.out.index).match("index_only_stub") },
                 { assert snapshot(process.out.versions).match("versions_index_only_stub") }
             )
@@ -81,8 +81,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert process.out.reads },
                 { assert file(process.out.log[0][1]).text.contains("Total reads passing E-value threshold = 100 (100.00)") },
                 {
@@ -122,8 +122,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 {
                     assert snapshot(
                         (
@@ -161,8 +161,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert process.out.reads },
                 { assert file(process.out.log[0][1]).text.contains("Total reads passing E-value threshold = 200 (100.00)") },
                 {
@@ -206,8 +206,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 {
                     assert snapshot(
                         (
@@ -259,8 +259,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert process.out.reads },
                 { assert file(process.out.log[0][1]).text.contains("Total reads passing E-value threshold = 100 (100.00)") },
                 {
@@ -316,8 +316,8 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert process.out.reads },
                 {
                     assert snapshot(

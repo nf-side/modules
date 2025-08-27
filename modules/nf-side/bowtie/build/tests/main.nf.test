@@ -23,12 +23,11 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(process.out).match() }
             )
         }
-
     }
 
     test("sarscov2 - fasta - stub") {
@@ -48,13 +47,11 @@ nextflow_process {
         }
 
         then {
+            assert process.success
             assertAll(
-                { assert process.success },
                 { assert snapshot(process.out).match() },
                 { assert snapshot(path(process.out.versions.get(0)).yaml).match("versions") },
             )
         }
-
     }
-
 }
