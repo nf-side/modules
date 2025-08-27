@@ -52,6 +52,7 @@ nextflow_workflow {
         }
 
         then {
+            assert workflow.success
             def all_files_temp = file(workflow.out.rsem_index.get(0).get(1)).listFiles().sort()
             def rsem_index = all_files_temp.collect { file -> file.name }
             all_files_temp = file(workflow.out.star_index.get(0).get(1)).listFiles().sort()
@@ -59,7 +60,6 @@ nextflow_workflow {
             all_files_temp = file(workflow.out.salmon_index.get(0).get(1)).listFiles().sort()
             def salmon_index = all_files_temp.collect { file -> file.name }
             assertAll(
-                { assert workflow.success },
                 { assert snapshot(
                     workflow.out.bowtie1_index,
                     workflow.out.bowtie2_index,

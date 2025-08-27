@@ -50,9 +50,9 @@
                 "4": [
                     [
                         {
-                            
+                            "id": "no_reads"
                         },
-                        "null.log:md5,d41d8cd98f00b204e9800998ecf8427e"
+                        "no_reads.log:md5,d41d8cd98f00b204e9800998ecf8427e"
                     ]
                 ],
                 "5": [
@@ -69,9 +69,9 @@
                 "log": [
                     [
                         {
-                            
+                            "id": "no_reads"
                         },
-                        "null.log:md5,d41d8cd98f00b204e9800998ecf8427e"
+                        "no_reads.log:md5,d41d8cd98f00b204e9800998ecf8427e"
                     ]
                 ],
                 "primary_fastq": [
@@ -87,9 +87,9 @@
         ],
         "meta": {
             "nf-test": "0.9.2",
-            "nextflow": "24.10.5"
+            "nextflow": "25.04.6"
         },
-        "timestamp": "2025-03-12T18:57:17.177351"
+        "timestamp": "2025-08-27T14:13:37.402725882"
     },
     "sarscov2_se_fastq_fasta_chr22_fasta - stub": {
         "content": [
