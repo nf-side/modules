@@ -76,7 +76,7 @@
                     {
                         "id": "test"
                     },
-                    "test.msisensor_scan.list:md5,a7886e7a56a1d7e3be6b4496753fd743"
+                    "test.msisensor_scan.list:md5,1c670ac986f5e6d7a9d11e45231d5417"
                 ]
             ],
             [
@@ -109,9 +109,9 @@
                 "versions.yml:md5,2fd70a9efdd32615abdd8f7782dc96ff",
                 "versions.yml:md5,559faafdcd1e8cfbe4508196bff7117b",
                 "versions.yml:md5,71605de67462dfda704bc0a3938af5a7",
+                "versions.yml:md5,718e3e6ba99fe7b6dd8d178c0e26cf2d",
                 "versions.yml:md5,757894083e1c8c3e6facc452a706be35",
                 "versions.yml:md5,9921c6dc6cad5895445bd3813814685a",
-                "versions.yml:md5,9b316374534f9598679f3c714477e1b2",
                 "versions.yml:md5,b5f8d54c5dcdf08109279ea5ba00c243",
                 "versions.yml:md5,cefa4d512efc7ab6ee1676171246d0b6"
             ]
