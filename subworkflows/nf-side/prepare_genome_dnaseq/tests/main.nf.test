@@ -54,17 +54,20 @@ nextflow_workflow {
             def dragmap_hashmap = all_files_temp.collect { file -> file.name }
             assertAll(
                 { assert snapshot(
-                    workflow.out.bwamem1_index,
-                    workflow.out.bwamem2_index,
-                    workflow.out.dragmap_hashmap.collect { [it[0], file(it[1]).name + "/", dragmap_hashmap] },
-                    workflow.out.fasta_dict,
-                    workflow.out.fasta_fai,
-                    workflow.out.intervals_bed,
-                    workflow.out.msisensorpro_list,
-                    workflow.out.vcf_gz.collect { [it[0], "${file(it[1]).name},variantsMD5:${path(it[1]).vcf.variantsMD5}"] },
-                    workflow.out.vcf_tbi.collect { [it[0], file(it[1]).name] },
-                    workflow.out.snapaligner_index,
-                    workflow.out.versions
+                    workflow.out.collectEntries { key, val ->
+                        if(key.matches("\\d+")) {
+                            return null
+                        } else if(key == "dragmap_hashmap") {
+                            return [key, val.collect { [it[0], file(it[1]).name + "/", dragmap_hashmap] }]
+                        } else if(key == "vcf_gz") {
+                            return [key, val.collect { [it[0], "${file(it[1]).name},variantsMD5:${path(it[1]).vcf.variantsMD5}"] }]
+                        } else if(key == "vcf_tbi") {
+                            return [key, val.collect { [it[0], file(it[1]).name] }]
+                        } else if(key == "versions") {
+                            return [key, val.collect { path(it).yaml }]
+                        }
+                        return [key,val]
+                    }.findAll { it != null }
                 ).match()
                 }
             )

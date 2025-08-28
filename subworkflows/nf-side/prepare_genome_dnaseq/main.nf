@@ -42,14 +42,12 @@ workflow PREPARE_GENOME_DNASEQ {
         BWAMEM1_INDEX(fasta)
 
         bwamem1_index = BWAMEM1_INDEX.out.index
-        versions = versions.mix(BWAMEM1_INDEX.out.versions)
     }
 
     if (run_bwamem2) {
         BWAMEM2_INDEX(fasta)
 
         bwamem2_index = BWAMEM2_INDEX.out.index
-        versions = versions.mix(BWAMEM2_INDEX.out.versions)
     }
 
     if (run_dragmap) {
@@ -109,9 +107,11 @@ workflow PREPARE_GENOME_DNASEQ {
     }
 
     if (run_snapaligner) {
-        def snap_input = fasta.combine(altliftoverfile).map { meta, fasta_, altliftoverfile_ ->
-            [meta, fasta_, [], [], altliftoverfile_]
-        }
+        def snap_input = fasta
+            .combine(altliftoverfile)
+            .map { meta, fasta_, altliftoverfile_ ->
+                [meta, fasta_, [], [], altliftoverfile_]
+            }
         SNAPALIGNER_INDEX(snap_input)
 
         snapaligner_index = snapaligner_index.mix(SNAPALIGNER_INDEX.out.index)
@@ -126,8 +126,9 @@ workflow PREPARE_GENOME_DNASEQ {
     fasta_fai         // channel: [meta, *.fa(sta).fai]
     intervals_bed     // channel: [meta, *.bed]
     msisensorpro_list // channel: [meta, *.list]
+    snapaligner_index // channel: [meta, snap/]
     vcf_gz            // channel: [meta, *.vcf.gz]
     vcf_tbi           // channel: [meta, *.vcf.gz.tbi]
-    snapaligner_index // channel: [meta, snap/]
+    topic_versions    = channel.topic('versions')
     versions          // channel: [versions.yml]
 }
