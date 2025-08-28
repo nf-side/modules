@@ -22,7 +22,7 @@
                     [
                         "BOWTIE2_BUILD",
                         "bowtie2",
-                        "2.5.4\n64-bit\nBuilt\nTue\nCompiler:\nOptions:\nSizeof"
+                        "2.5.4"
                     ]
                 ]
             ]
@@ -31,6 +31,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-08-28T19:00:30.463580121"
+        "timestamp": "2025-08-28T20:02:03.772860435"
     }
 }

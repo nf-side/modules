@@ -44,16 +44,12 @@ workflow PREPARE_GENOME_RNASEQ {
 
     if (run_bowtie1) {
         BOWTIE1_BUILD(fasta)
-
         bowtie1_index = BOWTIE1_BUILD.out.index
-        versions = versions.mix(BOWTIE1_BUILD.out.versions)
     }
 
     if (run_bowtie2) {
         BOWTIE2_BUILD(fasta)
-
         bowtie2_index = BOWTIE2_BUILD.out.index
-        versions = versions.mix(BOWTIE2_BUILD.out.versions)
     }
 
     if (run_faidx || run_sizes) {
@@ -140,6 +136,7 @@ workflow PREPARE_GENOME_RNASEQ {
     star_index       // channel: [meta, STARIndex/]
     transcript_fasta // channel: [meta, *.transcripts.fasta]
     versions         // channel: [versions.yml]
+    topic_versions   = channel.topic('versions')
 }
 
 /*
