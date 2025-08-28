@@ -16,12 +16,12 @@ process BBMAP_BBSPLIT {
     val only_build_index
 
     output:
-    path "bbsplit", optional: true, emit: index
+    path "bbsplit", emit: index, optional: true
     tuple val(meta), path('*primary*fastq.gz'), optional: true, emit: primary_fastq
     tuple val(meta), path('*fastq.gz'), optional: true, emit: all_fastq
     tuple val(meta), path('*txt'), optional: true, emit: stats
     tuple val(meta), path('*.log'), optional: true, emit: log
-    path "versions.yml", emit: versions
+    tuple val("${task.process}"), val('bbmap'), eval("bbversion.sh | grep -v 'Duplicate cpuset'"), topic: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -102,11 +102,6 @@ process BBMAP_BBSPLIT {
         src=\$(grep '^source' "\$summary_file" | cut -f2- -d\$'\\t' | sed 's|.*/bbsplit|bbsplit|')
         sed "s|^source.*|source\\t\$src|" "\$summary_file" > \${summary_file}.tmp && mv \${summary_file}.tmp \${summary_file}
     done
-
-    cat <<-END_VERSIONS > versions.yml
-    "${task.process}":
-        bbmap: \$(bbversion.sh | grep -v "Duplicate cpuset")
-    END_VERSIONS
     """
 
     stub:
@@ -127,10 +122,5 @@ process BBMAP_BBSPLIT {
     fi
 
     touch ${prefix}.log
-
-    cat <<-END_VERSIONS > versions.yml
-    "${task.process}":
-        bbmap: \$(bbversion.sh | grep -v "Duplicate cpuset")
-    END_VERSIONS
     """
 }
