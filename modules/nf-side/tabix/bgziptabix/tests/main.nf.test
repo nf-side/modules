@@ -16,8 +16,8 @@ nextflow_process {
             process {
                 """
                 input[0] = [
-                                [ id:'tbi_test' ],
-                                [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
+                    [ id:'tbi_test' ],
+                    [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
                 ]
                 """
             }
@@ -26,11 +26,10 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() },
                 { assert snapshot(
-                            file(process.out.gz_tbi[0][1]).name
-                                ).match("tbi_test")
-                }
+                    process.out.gz_tbi,
+                    ['versions', process.out[2]]
+                ).match() }
             )
         }
     }
@@ -42,8 +41,8 @@ nextflow_process {
             process {
                 """
                 input[0] = [
-                                [ id:'csi_test' ],
-                                [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
+                    [ id:'csi_test' ],
+                    [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
                 ]
                 """
             }
@@ -52,14 +51,12 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() },
                 { assert snapshot(
-                            file(process.out.gz_csi[0][1]).name
-                                ).match("csi_test")
-                }
+                    process.out.gz_csi,
+                    ['versions', process.out[2]]
+                ).match() }
             )
         }
-
     }
 
     test("sarscov2_bed_csi_stub") {
@@ -71,8 +68,8 @@ nextflow_process {
             process {
                 """
                 input[0] = [
-                                [ id:'test' ],
-                                [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
+                    [ id:'test' ],
+                    [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
                 ]
                 """
             }
@@ -81,14 +78,12 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() },
                 { assert snapshot(
-                            file(process.out.gz_csi[0][1]).name
-                                ).match("csi_stub")
-                }
+                    process.out.gz_csi,
+                    ['versions', process.out[2]]
+                ).match() }
             )
         }
-
     }
 
     test("sarscov2_bed_tbi_stub") {
@@ -100,8 +95,8 @@ nextflow_process {
             process {
                 """
                 input[0] = [
-                                [ id:'test' ],
-                                [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
+                    [ id:'test' ],
+                    [ file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/bed/test.bed', checkIfExists: true) ]
                 ]
                 """
             }
@@ -110,14 +105,11 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() },
                 { assert snapshot(
-                            file(process.out.gz_tbi[0][1]).name
-                                ).match("tbi_stub")
-                }
+                    process.out.gz_tbi,
+                    ['versions', process.out[2]]
+                ).match() }
             )
         }
-
     }
-
 }

@@ -12,7 +12,7 @@ process CAT_CAT {
 
     output:
     tuple val(meta), path("${prefix}"), emit: file_out
-    path "versions.yml", emit: versions
+    tuple val("${task.process}"), val('pigz'), eval("pigz --version 2>&1 | sed 's/pigz //g'"), topic: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -50,11 +50,6 @@ process CAT_CAT {
         ${command2} \\
         ${args3} \\
         > ${prefix}
-
-    cat <<-END_VERSIONS > versions.yml
-    "${task.process}":
-        pigz: \$( pigz --version 2>&1 | sed 's/pigz //g' )
-    END_VERSIONS
     """
 
     stub:
@@ -67,11 +62,6 @@ process CAT_CAT {
     }
     """
     touch ${prefix}
-
-    cat <<-END_VERSIONS > versions.yml
-    "${task.process}":
-        pigz: \$( pigz --version 2>&1 | sed 's/pigz //g' )
-    END_VERSIONS
     """
 }
 

@@ -26,8 +26,8 @@ nextflow_process {
             assert process.success
             assertAll (
                 { assert snapshot(
-                    process.out,
-                    file(process.out.tbi[0][1]).name
+                    process.out.tbi,
+                    ['versions', process.out[2]]
                 ).match() }
             )
         }
@@ -50,11 +50,11 @@ nextflow_process {
             assert process.success
             assertAll (
                 { assert snapshot(
-                    process.out,
-                    file(process.out.tbi[0][1]).name).match() }
+                    process.out.tbi,
+                    ['versions', process.out[2]]
+                ).match() }
             )
         }
-
     }
 
     test("sarscov2_vcf_tbi") {
@@ -74,12 +74,11 @@ nextflow_process {
             assert process.success
             assertAll (
                 { assert snapshot(
-                    process.out,
-                    file(process.out.tbi[0][1]).name
+                    process.out.tbi,
+                    ['versions', process.out[2]]
                 ).match() }
             )
         }
-
     }
 
     test("sarscov2_vcf_csi") {
@@ -99,12 +98,11 @@ nextflow_process {
             assert process.success
             assertAll (
                 { assert snapshot(
-                    process.out,
-                    file(process.out.csi[0][1]).name
+                    process.out.csi,
+                    ['versions', process.out[2]]
                 ).match() }
             )
         }
-
     }
 
     test("sarscov2_vcf_csi_stub") {
@@ -125,12 +123,10 @@ nextflow_process {
             assert process.success
             assertAll (
                 { assert snapshot(
-                    process.out,
-                    file(process.out.csi[0][1]).name
+                    process.out.csi,
+                    ['versions', process.out[2]]
                 ).match() }
             )
         }
-
     }
-
 }
