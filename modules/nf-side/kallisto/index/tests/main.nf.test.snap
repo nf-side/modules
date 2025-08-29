@@ -15,7 +15,7 @@
                     [
                         "KALLISTO_INDEX",
                         "kallisto",
-                        "kallisto, version 0.51.1"
+                        "0.51.1"
                     ]
                 ]
             ]
@@ -24,7 +24,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-08-29T11:11:22.177174865"
+        "timestamp": "2025-08-29T12:46:45.317329629"
     },
     "sarscov2 transcriptome.fasta": {
         "content": [
@@ -35,7 +35,7 @@
                     [
                         "KALLISTO_INDEX",
                         "kallisto",
-                        "kallisto, version 0.51.1"
+                        "0.51.1"
                     ]
                 ]
             ]
@@ -44,6 +44,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-08-29T11:10:21.1398932"
+        "timestamp": "2025-08-29T12:46:34.261805754"
     }
 }

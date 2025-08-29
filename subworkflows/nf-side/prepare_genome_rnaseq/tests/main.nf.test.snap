@@ -185,7 +185,7 @@
                     [
                         "PREPARE_GENOME_RNASEQ:KALLISTO_INDEX",
                         "kallisto",
-                        "kallisto, version 0.51.1"
+                        "0.51.1"
                     ],
                     [
                         "PREPARE_GENOME_RNASEQ:MAKE_TRANSCRIPTS_FASTA",
@@ -247,6 +247,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-08-29T11:41:15.588954468"
+        "timestamp": "2025-08-29T12:49:25.420047657"
     }
 }

@@ -12,7 +12,7 @@ process KALLISTO_INDEX {
 
     output:
     tuple val(meta), path("kallisto"), emit: index
-    tuple val("${task.process}"), val('kallisto'), eval("kallisto version 2>&1 | sed 's/^kallisto //; s/Usage.*\$//'"), topic: versions
+    tuple val("${task.process}"), val('kallisto'), eval("kallisto version 2>&1 | sed 's/^.*version //'"), topic: versions
 
     when:
     task.ext.when == null || task.ext.when
