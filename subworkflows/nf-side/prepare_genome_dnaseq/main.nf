@@ -36,8 +36,6 @@ workflow PREPARE_GENOME_DNASEQ {
     vcf_tbi = Channel.empty()
     snapaligner_index = Channel.empty()
 
-    versions = Channel.empty()
-
     if (run_bwamem1) {
         BWAMEM1_INDEX(fasta)
 
@@ -54,14 +52,12 @@ workflow PREPARE_GENOME_DNASEQ {
         DRAGMAP_HASHTABLE(fasta)
 
         dragmap_hashmap = DRAGMAP_HASHTABLE.out.hashmap
-        versions = versions.mix(DRAGMAP_HASHTABLE.out.versions)
     }
 
     if (run_createsequencedictionary) {
         GATK4_CREATESEQUENCEDICTIONARY(fasta)
 
         fasta_dict = GATK4_CREATESEQUENCEDICTIONARY.out.dict
-        versions = versions.mix(GATK4_CREATESEQUENCEDICTIONARY.out.versions)
     }
 
     if (run_faidx || run_intervals) {
@@ -73,13 +69,11 @@ workflow PREPARE_GENOME_DNASEQ {
             SAMTOOLS_FAIDX(fasta.map { meta, fasta_ -> [meta, fasta_, []] }, generate_sizes)
 
             fasta_fai = fasta_fai.mix(SAMTOOLS_FAIDX.out.fai)
-            versions = versions.mix(SAMTOOLS_FAIDX.out.versions)
         }
 
         if (run_intervals) {
             BUILD_INTERVALS(fasta_fai, [], false)
             intervals_bed = BUILD_INTERVALS.out.output
-            versions = versions.mix(BUILD_INTERVALS.out.versions)
         }
     }
 
@@ -87,7 +81,6 @@ workflow PREPARE_GENOME_DNASEQ {
         MSISENSORPRO_SCAN(fasta)
 
         msisensorpro_list = MSISENSORPRO_SCAN.out.list
-        versions = versions.mix(MSISENSORPRO_SCAN.out.versions)
     }
 
     if (run_tabix) {
@@ -101,9 +94,6 @@ workflow PREPARE_GENOME_DNASEQ {
 
         vcf_gz = TABIX_BGZIPTABIX.out.gz_tbi.map { meta, vcf_gz_, _vcf_tbi -> [meta, vcf_gz_] }
         vcf_tbi = TABIX_TABIX.out.tbi.mix(TABIX_BGZIPTABIX.out.gz_tbi.map { meta, _vcf_gz, vcf_tbi_ -> [meta, vcf_tbi_] })
-
-        versions = versions.mix(TABIX_BGZIPTABIX.out.versions)
-        versions = versions.mix(TABIX_TABIX.out.versions)
     }
 
     if (run_snapaligner) {
@@ -115,7 +105,6 @@ workflow PREPARE_GENOME_DNASEQ {
         SNAPALIGNER_INDEX(snap_input)
 
         snapaligner_index = snapaligner_index.mix(SNAPALIGNER_INDEX.out.index)
-        versions = versions.mix(SNAPALIGNER_INDEX.out.versions)
     }
 
     emit:
@@ -130,5 +119,4 @@ workflow PREPARE_GENOME_DNASEQ {
     vcf_gz            // channel: [meta, *.vcf.gz]
     vcf_tbi           // channel: [meta, *.vcf.gz.tbi]
     topic_versions    = channel.topic('versions')
-    versions          // channel: [versions.yml]
 }

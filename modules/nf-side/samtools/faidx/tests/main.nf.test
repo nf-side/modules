@@ -27,7 +27,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll(
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -50,7 +56,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll(
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -75,7 +87,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll(
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -100,7 +118,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll(
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -123,7 +147,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll(
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -146,7 +176,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -169,7 +205,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -194,7 +236,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }
@@ -219,7 +267,13 @@ nextflow_process {
         then {
             assert process.success
             assertAll (
-                { assert snapshot(process.out).match() }
+                { assert snapshot(
+                    process.out.fa,
+                    process.out.sizes,
+                    process.out.fai,
+                    process.out.gzi,
+                    ['versions', process.out[4]]
+                ).match() }
             )
         }
     }

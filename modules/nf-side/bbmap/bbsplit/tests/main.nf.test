@@ -58,11 +58,11 @@ nextflow_process {
             assert process.success
             assertAll(
                 { assert snapshot(
-                    process.out[0],
-                    process.out[1],
-                    process.out[2],
-                    process.out[3],
-                    process.out[4],
+                    process.out.index,
+                    process.out.primary_fastq,
+                    process.out.all_fastq,
+                    process.out.stats,
+                    process.out.log,
                     ['versions', process.out[5]]
                 ).match() }
             )
@@ -194,11 +194,11 @@ nextflow_process {
             assert process.success
             assertAll(
                 { assert snapshot(
-                    process.out[0],
-                    process.out[1],
-                    process.out[2],
-                    process.out[3],
-                    process.out[4],
+                    process.out.index,
+                    process.out.primary_fastq,
+                    process.out.all_fastq,
+                    process.out.stats,
+                    process.out.log,
                     ['versions', process.out[5]]
                 ).match() }
             )

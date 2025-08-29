@@ -17,10 +17,10 @@ process BBMAP_BBSPLIT {
 
     output:
     path "bbsplit", emit: index, optional: true
-    tuple val(meta), path('*primary*fastq.gz'), optional: true, emit: primary_fastq
-    tuple val(meta), path('*fastq.gz'), optional: true, emit: all_fastq
-    tuple val(meta), path('*txt'), optional: true, emit: stats
-    tuple val(meta), path('*.log'), optional: true, emit: log
+    tuple val(meta), path('*primary*fastq.gz'), emit: primary_fastq, optional: true
+    tuple val(meta), path('*fastq.gz'), emit: all_fastq, optional: true
+    tuple val(meta), path('*txt'), emit: stats, optional: true
+    tuple val(meta), path('*.log'), emit: log, optional: true
     tuple val("${task.process}"), val('bbmap'), eval("bbversion.sh | grep -v 'Duplicate cpuset'"), topic: versions
 
     when:

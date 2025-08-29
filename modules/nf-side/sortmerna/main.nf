@@ -16,7 +16,7 @@ process SORTMERNA {
     tuple val(meta), path("*non_rRNA.fastq.gz"), emit: reads, optional: true
     tuple val(meta), path("*.log"), emit: log, optional: true
     tuple val(meta2), path("idx"), emit: index, optional: true
-    path "versions.yml", emit: versions
+    tuple val("${task.process}"), val('sortmerna'), eval("sortmerna --version 2>&1 | grep 'SortMeRNA version' | sed 's/^.*SortMeRNA version //'"), topic: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -67,11 +67,6 @@ process SORTMERNA {
         ${args}
 
     ${mv_cmd}
-
-    cat <<-END_VERSIONS > versions.yml
-    "${task.process}":
-        sortmerna: \$(echo \$(sortmerna --version 2>&1) | sed 's/^.*SortMeRNA version //; s/ Build Date.*\$//')
-    END_VERSIONS
     """
 
     stub:
@@ -100,10 +95,5 @@ process SORTMERNA {
     ${mv_cmd}
     mkdir -p idx
     touch ${prefix}.sortmerna.log
-
-    cat <<-END_VERSIONS > versions.yml
-    "${task.process}":
-        sortmerna: \$(echo \$(sortmerna --version 2>&1) | sed 's/^.*SortMeRNA version //; s/ Build Date.*\$//')
-    END_VERSIONS
     """
 }

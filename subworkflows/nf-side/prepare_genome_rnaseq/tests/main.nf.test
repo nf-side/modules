@@ -53,12 +53,6 @@ nextflow_workflow {
 
         then {
             assert workflow.success
-            def all_files_temp = file(workflow.out.rsem_index.get(0).get(1)).listFiles().sort()
-            def rsem_index = all_files_temp.collect { file -> file.name }
-            all_files_temp = file(workflow.out.star_index.get(0).get(1)).listFiles().sort()
-            def star_index = all_files_temp.collect { file -> file.name }
-            all_files_temp = file(workflow.out.salmon_index.get(0).get(1)).listFiles().sort()
-            def salmon_index = all_files_temp.collect { file -> file.name }
             assertAll(
                 { assert snapshot(
                     workflow.out.collectEntries { key, val ->
@@ -67,13 +61,11 @@ nextflow_workflow {
                         } else if(key == "kallisto_index") {
                             return [key, val.collect { [it[0], file(it[1]).name] }]
                         } else if(key == "rsem_index") {
-                            return [key, val.collect { [it[0], file(it[1]).name + "/", rsem_index] }]
+                            return [key, val.collect { path(it[1]).list().collect { file(it.toString()).name } }]
                         } else if(key == "salmon_index") {
-                            return [key, val.collect { [it[0], file(it[1]).name + "/", salmon_index] }]
+                            return [key, val.collect { path(it[1]).list().collect { file(it.toString()).name } }]
                         } else if(key == "star_index") {
-                            return [key, val.collect { [it[0], file(it[1]).name + "/", star_index] }]
-                        } else if(key == "versions") {
-                            return [key, val.collect { path(it).yaml }]
+                            return [key, val.collect { path(it[1]).list().collect { file(it.toString()).name } }]
                         }
                         return [key,val]
                     }.findAll { it != null }
